@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { forkJoin } from 'rxjs';
-import { IUser, GetUserResponse} from '../../interfaces/user.interface';
+import { IUser, GetUserResponse } from '../../interfaces/user.interface';
 import { ListApiService } from '../../services/list-api.service';
 
 @Component({
@@ -8,9 +8,7 @@ import { ListApiService } from '../../services/list-api.service';
   templateUrl: './list-page.component.html',
   styleUrls: ['./list-page.component.css'],
 })
-
 export class ListPageComponent implements OnInit {
-  perPage: number = 2;
   lastLoadedPage: number = 1;
   users: IUser[] = [];
 
@@ -28,7 +26,7 @@ export class ListPageComponent implements OnInit {
       this.addUser(user.request1);
       this.addUser(user.request2);
 
-      this.lastLoadedPage=this.lastLoadedPage+2;
+      this.lastLoadedPage = this.lastLoadedPage + 2;
     });
   }
 

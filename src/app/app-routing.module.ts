@@ -14,8 +14,15 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    component: ListPageComponent,
+    loadChildren: () =>
+      import('./modules/list-page/list-page.module').then(
+        (m) => m.ListPageModule
+      ),
   },
+  // {
+  //   path: '*',
+  //   component: ListPageComponent,
+  // },
 ];
 
 @NgModule({

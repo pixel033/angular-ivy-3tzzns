@@ -9,5 +9,6 @@ import { AppendSignPipe } from './pipes/append-sign.pipe';
 @NgModule({
   imports: [CommonModule, ListPageRoutingModule, HttpClientModule],
   declarations: [ListPageComponent, ListComponent, AppendSignPipe],
+  providers: [],
 })
 export class ListPageModule {}

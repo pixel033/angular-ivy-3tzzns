@@ -10,6 +10,6 @@ export class ListComponent {
   @Input() users: IUser[] = [];
 
   trackByUser(id: number, user: IUser): number {
-    return user.id;
+    return user[id];
   }
 }
