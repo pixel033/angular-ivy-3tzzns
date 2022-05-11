@@ -6,3 +6,8 @@ export interface IUser {
   username: string;
   website: string;
 }
+
+export interface GetUserResponse<T> {
+  request1: T;
+  request2: T;
+}
