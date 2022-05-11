@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListPageComponent } from './modules/list-page/components/list-page/list-page.component';
-
-import { ListComponent } from './modules/list-page/components/list/list.component';
+import { CounterPageComponent } from './modules/counter-page/components/counter-page/counter-page.component';
 
 const routes: Routes = [
   {
     path: 'counter',
+    pathMatch: 'full',
     loadChildren: () =>
       import('./modules/counter-page/counter-page.module').then(
         (m) => m.CounterPageModule
@@ -14,15 +13,23 @@ const routes: Routes = [
   },
   {
     path: 'list',
+    pathMatch: 'full',
     loadChildren: () =>
       import('./modules/list-page/list-page.module').then(
         (m) => m.ListPageModule
       ),
   },
-  // {
-  //   path: '*',
-  //   component: ListPageComponent,
-  // },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    component: CounterPageComponent,
+    // TODO: It should be HomeComponent/ Home Module
+  },
+  {
+    path: '**',
+    component: CounterPageComponent,
+    // TODO: It should be PageNotFoundComponent
+  },
 ];
 
 @NgModule({

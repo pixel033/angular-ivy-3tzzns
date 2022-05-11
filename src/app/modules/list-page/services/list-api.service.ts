@@ -5,7 +5,7 @@ import { IUser } from '../interfaces/user.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ListApiService {
-  constructor(public httpClient: HttpClient) {}
+  constructor(private readonly httpClient: HttpClient) {}
 
   getUser(id: number): Observable<IUser> {
     return this.httpClient.get<IUser>(
